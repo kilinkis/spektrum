@@ -7,7 +7,6 @@ const client = createClient({
 })
 
 export async function getColorPairs(): Promise<ColorPair[]> {
-  console.log('accessToken', process.env.CONTENTFUL_DELIVERY_TOKEN)
   const res = await client.getEntries({
     content_type: 'colorPair',
   })
