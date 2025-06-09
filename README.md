@@ -26,7 +26,7 @@ The project emphasizes **accessibility, structured content, clean design, and CM
 
 ![Spektrum UI preview](public/og-image.png)
 
-> Want to check it live? (Deploy it to [Vercel](https://vercel.com) or Netlify in 1 click)
+> Want to check it live? See [here](spektrum-git-main-juan-manuel-incaurgarats-projects.vercel.app)
 
 ---
 
@@ -44,3 +44,9 @@ The project emphasizes **accessibility, structured content, clean design, and CM
 ```bash
 pnpm install
 pnpm run dev
+
+TODO:
+- A11Y
+- SEO
+- Lighthouse score
+- Ally video
