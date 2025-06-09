@@ -6,9 +6,10 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN!,
 })
 
-export async function getColorPairs(): Promise<ColorPair[]> {
+export async function getColorPairs(locale: string = 'en-US'): Promise<ColorPair[]> {
   const res = await client.getEntries({
     content_type: 'colorPair',
+    locale,
   })
 
   return res.items.map((item: any) => ({

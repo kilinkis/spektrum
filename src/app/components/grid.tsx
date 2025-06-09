@@ -5,8 +5,12 @@ import { contrastRatio } from '@/lib/contrast/contrast-ratio'
 import { passesWCAG } from '@/lib/contrast/passes-wcag'
 import { css } from '@/styled-system/css';
 
-const Grid = async (): Promise<JSX.Element> => {
-  const pairs = await getColorPairs()
+type GridProps = {
+  locale?: string;
+};
+
+const Grid = async ({locale= 'en-US'}: GridProps) => {
+  const pairs = await getColorPairs(locale)
 
   if (!pairs || pairs.length === 0) {
     return <p>No color pairs found.</p>
