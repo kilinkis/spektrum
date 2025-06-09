@@ -4,7 +4,7 @@ Built in one evening using:
 
 - **Next.js App Router**
 - **TypeScript**
-- **Stitches**
+- **PandaCSS**
 - **Contentful CMS**
 
 ---
@@ -34,7 +34,7 @@ The project emphasizes **accessibility, structured content, clean design, and CM
 
 - `Next.js` (App Router)
 - `TypeScript`
-- `Stitches` for styling
+- `PandaCSS` for styling
 - `Contentful` for content management
 
 ---
