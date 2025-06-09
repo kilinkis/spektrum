@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React from 'react';
 
 import { getColorPairs } from '@/lib/contentful'
 import { contrastRatio } from '@/lib/contrast/contrast-ratio'

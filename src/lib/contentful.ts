@@ -11,7 +11,8 @@ export async function getColorPairs(locale: string = 'en-US'): Promise<ColorPair
     content_type: 'colorPair',
     locale,
   })
-
+  
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return res.items.map((item: any) => ({
     title: item.fields.title,
     foregroundColor: item.fields.foregroundColor,
