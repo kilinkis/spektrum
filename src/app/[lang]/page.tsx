@@ -1,7 +1,7 @@
 import { css } from '@/styled-system/css'
 
-import Grid from '../components/grid'
-import { LocaleSwitcher } from '../components/locale-switcher'
+import Grid from '../components/grid/grid'
+import { LocaleSwitcher } from '../components/locale-switcher/locale-switcher'
 
 type HomePageParams = {
   params: Promise<{ lang: 'en' | 'da' }>
@@ -34,7 +34,7 @@ export default async function Home({ params }: HomePageParams) {
   return (
     <main className={css({ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: '$body' })}>
       <LocaleSwitcher />
-      <h1>🎨 Spektrum</h1>
+      <h1 className={css({fontSize: '2xl'})}>🎨 Spektrum</h1>
       <p>A quick look at accessible (and not-so-accessible) color pairings.</p>
 
       <Grid locale={locale} />
