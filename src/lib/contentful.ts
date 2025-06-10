@@ -20,3 +20,12 @@ export async function getColorPairs(locale: string = 'en-US'): Promise<ColorPair
     notes: item.fields.notes || '',
   }))
 }
+
+export async function getSiteDescription(locale: string = 'en-US'): Promise<string> {
+  const res = await client.getEntries({
+    content_type: 'siteInfo',
+    locale,
+  })
+
+  return String(res.items[0]?.fields?.siteDescription ?? 'No description available')
+}
