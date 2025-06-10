@@ -1,5 +1,3 @@
-[![Build](https://img.shields.io/badge/build-passing-brightgreen)](#)
-[![Lighthouse](https://img.shields.io/badge/Lighthouse-Accessibility_100-green)](#)
 [![WCAG](https://img.shields.io/badge/WCAG-AA%20%26%20AAA-blue)](#)
 [![Contentful](https://img.shields.io/badge/CMS-Contentful-blue)](https://www.contentful.com/)
 [![CSS Framework](https://img.shields.io/badge/styled_with-Panda_CSS-ff61cf)](https://panda-css.com/)
