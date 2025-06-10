@@ -1,3 +1,12 @@
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)](#)
+[![Lighthouse](https://img.shields.io/badge/Lighthouse-Accessibility_100-green)](#)
+[![WCAG](https://img.shields.io/badge/WCAG-AA%20%26%20AAA-blue)](#)
+[![Contentful](https://img.shields.io/badge/CMS-Contentful-blue)](https://www.contentful.com/)
+[![CSS Framework](https://img.shields.io/badge/styled_with-Panda_CSS-ff61cf)](https://panda-css.com/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Deploy on Vercel](https://img.shields.io/badge/deploy-Vercel-black?logo=vercel)](https://vercel.com/)
+
+
 ![Spektrum. A tiny, purposeful demo site to visualize and evaluate color accessibility using WCAG contrast ratio standards.](./public/og-image.png)
 
 Built in one evening using:
@@ -26,7 +35,7 @@ The project emphasizes **accessibility, structured content, clean design, and CM
 
 ![Spektrum UI preview](public/og-image.png)
 
-> Want to check it live? See [here](spektrum-git-main-juan-manuel-incaurgarats-projects.vercel.app)
+> Want to check it live? See [here](https://spektrum-omega.vercel.app)
 
 ---
 
