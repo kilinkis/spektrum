@@ -12,14 +12,28 @@ type HomePageParams = {
 // TODO: move this content to the CMS
 export async function generateMetadata({ params }: HomePageParams) {
   const {lang: paramLang} = await params
+
+  const commonMetadata = {
+    metadataBase: new URL('https://spektrum.colors'),
+    openGraph: {
+      title: 'Spektrum',
+      description: 'Accessible color pairings',
+      images: ['/og-image.png'],
+      locale: paramLang === 'da' ? 'da_DK' : 'en_US',
+      siteName: 'Spektrum',
+    },
+  }
+
   const metadataMap = {
     en: {
       title: 'Spektrum – Accessible Color Pairings',
       description: 'Visualize and evaluate WCAG contrast ratios.',
+      ...commonMetadata,
     },
     da: {
       title: 'Spektrum – Tilgængelige Farvekombinationer',
       description: 'Visualisér og vurder WCAG-kontrastforhold.',
+      ...commonMetadata,
     },
   }
 
