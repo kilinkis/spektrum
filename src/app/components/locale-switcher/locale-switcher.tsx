@@ -12,10 +12,27 @@ export function LocaleSwitcher() {
 
   return (
     <div className={css({ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' })}>
-      <select onChange={(e) => switchTo(e.target.value)} value={params.lang}>
-        <option value="en">🇬🇧 English</option>
-        <option value="da">🇩🇰 Dansk</option>
-      </select>
+      <form aria-label="Language switcher">
+        <label htmlFor="locale-switcher" className={visuallyHidden}>
+          Choose language
+        </label>
+        <select id="locale-switcher" onChange={(e) => switchTo(e.target.value)} value={params.lang}>
+          <option value="en">🇬🇧 English</option>
+          <option value="da">🇩🇰 Dansk</option>
+        </select>
+      </form>
     </div>
   )
 }
+
+const visuallyHidden = css({
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: '0',
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  borderWidth: '0',
+})

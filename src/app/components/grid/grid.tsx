@@ -16,46 +16,65 @@ const Grid = async ({locale= 'en-US'}: GridProps) => {
     return <p>No color pairs found.</p>
   }
 
-  return (
-    <div
-    className={css({
-    display: 'grid',
-    gap: '1.5rem',
-    marginTop: '2rem',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-  })}
-   >
+  // ...existing imports...
+
+return (
+  <section aria-labelledby="color-pairings-heading">
+    <h2 id="color-pairings-heading" className={css({ fontSize: 'xl', marginBottom: '1rem' })}>
+      Color Pairings
+    </h2>
+    <ul
+      className={css({
+        display: 'grid',
+        gap: '1.5rem',
+        marginTop: '2rem',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+        listStyle: 'none',
+        padding: 0,
+      })}
+      role="list"
+    >
       {pairs.map((pair, i) => {
         const ratio = contrastRatio(pair.foregroundColor, pair.backgroundColor)
         const result = passesWCAG(ratio)
 
         return (
-          <div key={i} 
-          className={css({
-            backgroundColor: pair.backgroundColor,
-            color: pair.foregroundColor,
-            borderRadius: '12px',
-            padding: '1.5rem',
-            boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
-            transition: 'transform 0.2s ease',
-            _hover: {
-              transform: 'scale(1.02)',
-            },
-          })}
-          // need to use inline styles for dynamic colors
-          style={{backgroundColor: pair.backgroundColor, color: pair.foregroundColor}}
+          <li
+            key={i}
+            role="listitem"
+            className={css({
+              backgroundColor: pair.backgroundColor,
+              color: pair.foregroundColor,
+              borderRadius: '12px',
+              padding: '1.5rem',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
+              transition: 'transform 0.2s ease',
+              _hover: {
+                transform: 'scale(1.02)',
+              },
+              outline: 'none',
+              _focusVisible: {
+                boxShadow: '0 0 0 3px #7c3aed',
+              },
+            })}
+            style={{
+              backgroundColor: pair.backgroundColor,
+              color: pair.foregroundColor,
+            }}
+            aria-label={`Color pair: ${pair.title}, contrast ratio ${ratio.toFixed(2)}`}
           >
-            <h2>{pair.title}</h2>
+            <h3>{pair.title}</h3>
             <p>
               Contrast ratio: {ratio.toFixed(2)} —{' '}
               WCAG AA: {result.AA ? '✅' : '❌'} | AAA: {result.AAA ? '✅' : '❌'}
             </p>
             <small>{pair.notes}</small>
-          </div>
+          </li>
         )
       })}
-    </div>
-  );
+    </ul>
+  </section>
+)
 };
 
 export default Grid;
