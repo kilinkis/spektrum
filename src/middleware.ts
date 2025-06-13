@@ -11,9 +11,13 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
+  console.log('Current pathname:', pathname);
+  console.log('Pathname has locale:', pathnameHasLocale);
+
   if (!pathnameHasLocale) {
-    request.nextUrl.pathname = `/en${pathname}`; // Redirect to /en/current-path
-    return NextResponse.redirect(request.nextUrl);
+    const url = request.nextUrl.clone();
+    url.pathname = `/en${pathname}`;
+    return NextResponse.redirect(url);
   }
 
   // If a locale is present, allow the request to proceed
