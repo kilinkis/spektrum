@@ -29,8 +29,6 @@ The project emphasizes **accessibility, structured content, clean design, and CM
 
 ## 📸 Preview
 
-![Spektrum UI preview](public/og-image.png)
-
 > Want to check it live? See [here](https://spektrum-omega.vercel.app)
 
 ---
